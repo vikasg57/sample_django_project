@@ -3,6 +3,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 
 from base.exceptions import BaseAPIException
+from base.utils import get_full_name
 from users.models import UserProfile
 
 
@@ -44,9 +45,9 @@ class UserHandler:
             )
         user.set_password(password)
         user.save()
+        name = get_full_name(first_name, last_name)
         user_profile = UserProfile.objects.create(
-            first_name=first_name,
-            last_name=last_name,
+            name=name,
             user=user,
             mobile=mobile,
             is_verified=True
