@@ -42,6 +42,7 @@ class AbstractAPIView(APIView):
             return string
 
     def get_email(self, email):
+        email = email.lower()
         if email is not None:
             try:
                 validate_email(email)
