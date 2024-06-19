@@ -1,6 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
 from base.models import AbstractBaseModel
+from users.choices import (
+    FOLLOWER_STATUS_CHOICES,
+    FollowerStatusChoices,
+    FRIEND_REQUEST_STATUS_CHOICES,
+    FriendRequestStatusChoices
+)
 
 
 class UserProfile(AbstractBaseModel):
@@ -29,3 +35,40 @@ class UserProfile(AbstractBaseModel):
     @property
     def last_name(self):
         return self.user.last_name
+
+
+class UserFollower(AbstractBaseModel):
+    profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+        related_name="user_profile",
+    )
+    followed_by = models.ForeignKey(
+        UserProfile,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+        related_name="followed_by",
+    )
+    followed_date = models.DateTimeField(blank=False, null=False, auto_now_add=True)
+    unfollowed_date = models.DateTimeField(blank=True, null=True)
+    status = models.IntegerField(
+        choices=FOLLOWER_STATUS_CHOICES,
+        default=FollowerStatusChoices.FOLLOWING
+    )
+    is_close_friend = models.BooleanField(default=False)
+
+
+class FriendRequest(AbstractBaseModel):
+    from_user = models.ForeignKey(
+        UserProfile, related_name='sent_requests',
+        on_delete=models.CASCADE)
+    to_user = models.ForeignKey(
+        UserProfile, related_name='received_requests',
+        on_delete=models.CASCADE)
+    status = models.IntegerField(
+        choices=FRIEND_REQUEST_STATUS_CHOICES,
+        default=FriendRequestStatusChoices.PENDING
+    )
