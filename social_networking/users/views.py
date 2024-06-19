@@ -11,7 +11,7 @@ class AuthLogInView(AbstractAPIView):
     permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
-        email = request.data.get("email")
+        email = self.get_email(request.data.get("email"))
         password = request.data.get("password")
         data = UserHandler().get_user(email, password)
         return APIResponse(data=data, status=status.HTTP_200_OK)
@@ -26,7 +26,7 @@ class AuthSignUpView(AbstractAPIView):
         last_name = request.data.get("last_name")
         mobile = request.data.get("mobile")
         password = request.data.get("password")
-        email = request.data.get("email")
+        email = self.get_email(request.data.get("email"))
         data = UserHandler().crete_user(
             first_name, last_name, mobile, email, password)
         return APIResponse(data=data, status=status.HTTP_200_OK)
