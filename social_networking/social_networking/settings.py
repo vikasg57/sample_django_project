@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-%u*^r)d#m#b&=_&4xjl6=v3cy-jty_sx(j9wl#^pw-6(&%n8xw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -37,9 +37,20 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'drf_yasg',
     'users',
     'base',
 ]
+
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -85,11 +96,11 @@ WSGI_APPLICATION = "social_networking.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "127.0.0.1",
-        "PORT": 5455,
+        "NAME": "hello_django_dev",
+        "USER": "hello_django",
+        "PASSWORD": "hello_django",
+        "HOST": "db",
+        "PORT": 5432,
     }
 }
 

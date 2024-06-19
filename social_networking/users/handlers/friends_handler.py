@@ -175,7 +175,8 @@ class FriendsHandler:
             return self.generate_friend_request_response(friend_request)
 
         except Exception as e:
-            if e.args[0] in ("Friend Request already Rejected", "Friend Request already accepted"):
+            if e.args[0] in ("Friend Request already Rejected",
+                             "Friend Request already accepted"):
                 raise BaseAPIException(
                     e,
                     "error_while_processing_request"
