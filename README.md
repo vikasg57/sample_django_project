@@ -71,6 +71,11 @@ docker-compose exec web python manage.py migrate --noinput
 
 ## Django Social Network API Documentation
 
+**Check All API in Postman collection by clicking below button**
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/avionics-operator-121400/workspace/vikas-s-workspace/collection/19125669-37d64d37-5d9c-4532-9b45-b5643e0ea4dc?action=share&creator=19125669)
+
+
 ### Overview
 This document provides details on the REST API endpoints available in the Django Social Network project. The API allows interaction with app.
 
