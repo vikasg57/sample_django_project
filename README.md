@@ -270,7 +270,7 @@ Response:HTTP 200
 }
 ```
 
-### Get all pending friend requests for logged in User
+#### Get all pending friend requests for logged in User
 - **URL:** `/users/get/pending_requests/`
 - **Method:** GET
 - **Description:** Get friends of a logged in user.
