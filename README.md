@@ -73,6 +73,8 @@ docker-compose exec web python manage.py migrate --noinput
 
 **Check All API in Postman collection by clicking below button**
 
+Just select the environment in postman and you are good to go
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/avionics-operator-121400/workspace/vikas-s-workspace/collection/19125669-37d64d37-5d9c-4532-9b45-b5643e0ea4dc?action=share&creator=19125669)
 
 
