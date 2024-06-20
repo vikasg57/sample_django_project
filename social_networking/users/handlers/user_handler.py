@@ -52,7 +52,7 @@ class UserHandler:
             mobile=mobile,
             is_verified=True
         )
-        return self.generate_profile_response(user_profile, False)
+        return self.generate_profile_response(user_profile, jwt=True)
 
     def generate_profile_response(self, profile, jwt=True):
         response = {
