@@ -12,15 +12,11 @@ Mini back-end system for library management written in Python.
 - Django Rest Framework SimpleJWT
 
 ## Steps to Follow for Running Backend Server:
-    
-## Steps to follow for running backend server:
 - ### step 1: Clone the github repository
 Clone the github repository for running the project locally.
 ```
 git clone https://github.com/vikasg57/sample_django_project.git
 ```
-
-
 - ### Step 2: Set Execution Permissions for the Entrypoint File
 
 ##### On Unix-based Systems (Linux/MacOS):
@@ -28,7 +24,7 @@ git clone https://github.com/vikasg57/sample_django_project.git
 To give execution permissions to the `entrypoint.sh` file in your app directory, run the following command:
 
 ```bash
-chmod +x app/entrypoint.sh
+chmod +x social_networking/entrypoint.sh
 ```
 
 ##### On Windows:
@@ -44,12 +40,12 @@ sudo apt-get install dos2unix
 ###### Convert the file format:
 
 ```bash
-dos2unix app/entrypoint.sh
+dos2unix social_networking/entrypoint.sh
 ```
 ###### Set execution permissions:
 
 ```bash
-chmod +x app/entrypoint.sh
+chmod +x social_networking/entrypoint.sh
 ```
 
 - ### Step 3: Build and Run the Docker Containers
@@ -71,11 +67,10 @@ docker-compose exec web python manage.py migrate --noinput
 # Django Social Network API Documentation
 
 ## Overview
-This document provides details on the REST API endpoints available in the Django Social Network project. The API allows interaction with a mini back-end system for library management.
+This document provides details on the REST API endpoints available in the Django Social Network project. The API allows interaction with app.
 
 ## Base URL
 http://localhost:8000
-
 
 ## Endpoints
 
@@ -273,7 +268,7 @@ Response:HTTP 200
 #### Get all pending friend requests for logged in User
 - **URL:** `/users/get/pending_requests/`
 - **Method:** GET
-- **Description:** Get friends of a logged in user.
+- **Description:** Get Pending requests for logged in user (received requests).
 - **Parameters:**
   - **page_num** (optional, integer): Page number for pagination, defaults to 1 if not provided.
 
