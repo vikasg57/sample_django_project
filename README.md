@@ -55,6 +55,11 @@ Run the following commands to build and start the Docker containers for the Djan
 ```bash
 docker-compose up -d --build
 ```
+Check logs
+
+```bash
+docker-compose logs -f
+```
 
 ### 4. Apply Database Migrations
 
