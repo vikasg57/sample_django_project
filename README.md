@@ -12,12 +12,12 @@ Mini back-end system for library management written in Python.
 - Django Rest Framework SimpleJWT
 
 ## Steps to Follow for Running Backend Server:
-- ### step 1: Clone the github repository
+### step 1: Clone the github repository
 Clone the github repository for running the project locally.
 ```
 git clone https://github.com/vikasg57/sample_django_project.git
 ```
-- ### Step 2: Set Execution Permissions for the Entrypoint File
+### Step 2: Set Execution Permissions for the Entrypoint File
 
 ##### On Unix-based Systems (Linux/MacOS):
 
@@ -48,7 +48,7 @@ dos2unix social_networking/entrypoint.sh
 chmod +x social_networking/entrypoint.sh
 ```
 
-- ### Step 3: Build and Run the Docker Containers
+### Step 3: Build and Run the Docker Containers
 
 Run the following commands to build and start the Docker containers for the Django application:
 
@@ -56,7 +56,7 @@ Run the following commands to build and start the Docker containers for the Djan
 docker-compose up -d --build
 ```
 
-- ### Step 4: Apply Database Migrations
+### Step 4: Apply Database Migrations
 
 Execute the database migrations using Django's manage.py script:
 
