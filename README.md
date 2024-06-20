@@ -64,15 +64,15 @@ Execute the database migrations using Django's manage.py script:
 docker-compose exec web python manage.py migrate --noinput
 ```
 
-# Django Social Network API Documentation
+## Django Social Network API Documentation
 
-## Overview
+### Overview
 This document provides details on the REST API endpoints available in the Django Social Network project. The API allows interaction with app.
 
-## Base URL
+### Base URL
 http://localhost:8000
 
-## Endpoints
+### Endpoints
 
 ### 1. Users
 
